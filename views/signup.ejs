@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <%- include('./partials/head') %>
+    <title>Sign Up</title>
+  </head>
+  <body>
+    <%- include('./partials/nav') %>
+
+    <div class="container mt-4">
+      <form action="/user/signup" method="post">
+        <div class="mb-3">
+          <label for="fullName" class="form-label"
+            >Full Name</label
+          >
+          <input
+            type="text"
+            class="form-control"
+            id="fullName"
+            name="fullName"
+            aria-describedby="nameHelp"
+          />
+          <div id="nameHelp" class="form-text">
+            Please Enter your Full name including surname
+          </div>
+        </div>
+        <div class="mb-3">
+          <label for="email" class="form-label"
+            >Email address</label
+          >
+          <input
+            type="email"
+            class="form-control"
+            id="email"
+            name="email"
+            aria-describedby="emailHelp"
+          />
+          <div id="emailHelp" class="form-text">
+            We'll never share your email with anyone else.
+          </div>
+        </div>
+        <div class="row g-3 align-items-center">
+          <div class="col-auto">
+            <label for="password" class="col-form-label">Password</label>
+          </div>
+          <div class="col-auto">
+            <input
+              type="password"
+              name="password"
+              id="password"
+              class="form-control"
+              aria-describedby="passwordHelpInline"
+            />
+          </div>
+          <div class="col-auto">
+            <span id="passwordHelpInline" class="form-text">
+              Must be 8-20 characters long.
+            </span>
+          </div>
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+      </form>
+    </div>
+
+    <%- include('./partials/script') %>
+  </body>
+</html>

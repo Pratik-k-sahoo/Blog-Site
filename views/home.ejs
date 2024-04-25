@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <%- include('./partials/head') %>
+    <title>Home Page</title>
+  </head>
+  <body>
+    <%- include('./partials/nav') %>
+
+    <div class="container mt-3">
+      <div id="carouselExampleCaptions" class="carousel slide">
+        <div class="carousel-indicators">
+          <button
+            type="button"
+            data-bs-target="#carouselExampleCaptions"
+            data-bs-slide-to="0"
+            class="active"
+            aria-current="true"
+            aria-label="Slide 1"
+          ></button>
+          <button
+            type="button"
+            data-bs-target="#carouselExampleCaptions"
+            data-bs-slide-to="1"
+            aria-label="Slide 2"
+          ></button>
+          <button
+            type="button"
+            data-bs-target="#carouselExampleCaptions"
+            data-bs-slide-to="2"
+            aria-label="Slide 3"
+          ></button>
+        </div>
+        <div class="carousel-inner w-100">
+          <div class="carousel-item active">
+            <img
+              src="https://source.unsplash.com/random/?Cryptocurrency/300x201"
+              class="d-block w-100 img-fluid img-thumbnail"
+              style="aspect-ratio: 6/2"
+              alt="Crypto"
+            />
+            <div class="carousel-caption d-none d-md-block">
+              <h5 class="fw-bold text-primary bg-primary-subtle p-2">
+                Cryptocurrency
+              </h5>
+              <p class="text-body-emphasis bg-danger-subtle p-3">
+                A cryptocurrency is a digital currency, which is an alternative
+                form of payment created using encryption algorithms.
+              </p>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <img
+              src="https://source.unsplash.com/random/?Coding/300x201"
+              class="d-block w-100 img-fluid img-thumbnail"
+              style="aspect-ratio: 6/2"
+              alt="Coding"
+            />
+            <div class="carousel-caption d-none d-md-block">
+              <h5 class="fw-bold text-primary bg-primary-subtle p-2">Coding</h5>
+              <p class="text-body-emphasis bg-danger-subtle p-3">
+                Coding creates a set of instructions for computers to follow.
+              </p>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <img
+              src="https://source.unsplash.com/random/?Mountain/300x201"
+              class="d-block w-100 img-fluid img-thumbnail"
+              style="aspect-ratio: 6/2"
+              alt="Mountain"
+            />
+            <div class="carousel-caption d-none d-md-block">
+              <h5 class="fw-bold text-primary bg-primary-subtle p-2">
+                Mountain
+              </h5>
+              <p class="text-body-emphasis bg-danger-subtle p-3">
+                a landform that rises at least 1,000 feet (300 meters) or more
+                above its surrounding area.
+              </p>
+            </div>
+          </div>
+        </div>
+        <button
+          class="carousel-control-prev"
+          type="button"
+          data-bs-target="#carouselExampleCaptions"
+          data-bs-slide="prev"
+        >
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button
+          class="carousel-control-next"
+          type="button"
+          data-bs-target="#carouselExampleCaptions"
+          data-bs-slide="next"
+        >
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+      </div>
+    </div>
+
+    <div class="m-5 contaner">
+      <div class="row row-cols-4">
+        <% blogs.forEach(blog => { %>
+        <div class="col">
+          <div class="card col" style="width: 18rem">
+            <img
+              src="<%= blog.coverImageUrl %>"
+              style="aspect-ratio: 4/3"
+              class="card-img-top"
+              alt="Cover Image"
+            />
+            <div class="card-body">
+              <h5 class="card-title"><%= blog.title %></h5>
+              <a href="/blog/<%= blog._id %>" class="btn btn-primary"
+                >View Blog</a
+              >
+            </div>
+          </div>
+        </div>
+        <% }) %>
+      </div>
+    </div>
+
+    <%- include('./partials/script') %>
+  </body>
+</html>
