@@ -9,7 +9,7 @@ const uploadDir = process.env.UPLOAD_DIR;
 
 const storage = multer.diskStorage({
   destination: function (req, file, cb) {
-    cb(null, path.resolve(`uploadDir`));
+    cb(null, path.resolve(uploadDir));
   },
   filename: function (req, file, cb) {
     const fileName = `${Date.now()}-${file.originalname}`;
