@@ -7,9 +7,7 @@ const fs = require("fs");
 
 const storage = multer.diskStorage({
   destination: function (req, file, cb) {
-    const dir = path.resolve(`./public/uploads/${req.user._id}`);
-    if (!fs.existsSync(dir)) fs.mkdirSync(dir);
-    cb(null, dir);
+    cb(null, path.resolve(`./public/uploads`));
   },
   filename: function (req, file, cb) {
     const fileName = `${Date.now()}-${file.originalname}`;
